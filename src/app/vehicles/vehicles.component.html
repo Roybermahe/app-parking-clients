@@ -1,0 +1,15 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*, *,30" columns="auto, *, auto">
+        <label class="mat-icon btn-nav" col="0" row="0" text="help_outline"></label>
+        <label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>
+        <Image width="50%" src="res://autologo" col="0" row="1" colSpan="3"></Image>
+    </GridLayout>
+</ActionBar>
+<StackLayout>
+    <Button class="btn-add-vehiculo" (tap)="onRegisterVehicle()">
+        <FormattedString>
+            <span text="add" class="mat-icon btn-ico"></span>
+            <span text=" Agregar vehiculo" class="btn-add-text"></span>
+        </FormattedString>
+    </Button>
+</StackLayout>

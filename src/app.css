@@ -1,0 +1,49 @@
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+
+
+Button.-primary {
+    background-color: #0155D2  !important;
+}
+
+.link {
+    color: #0155D2;
+}
+
+.fa {
+    font-family: 'fontawesome-webfont';
+}
+
+.f-mono {
+    font-family: 'RobotoMono';    
+}
+
+.form {
+    width: 80%;
+}
+
+.txt-logo {
+    font-size: 20;
+    font-weight: bold;
+}
+
+.txt-logo-2 {
+    font-size: 13;
+}
+
+.txt-des {
+    text-align: center;
+    margin-bottom: 8;
+}
+
+.mat-icon {
+    font-family: 'Material-outline';
+}
+
+.img-logo {
+    margin-top: 90;
+}
+
+.container {
+    padding: 7;
+}

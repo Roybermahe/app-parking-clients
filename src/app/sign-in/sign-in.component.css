@@ -1,0 +1,44 @@
+.btn-register {
+    font-weight: bold;
+    color: white !important;
+    background-color: #408CFF  !important;
+}
+
+.btn-google {
+    background-color: #EE3030  !important;
+    padding: 12;
+    color: white;
+    text-align: center;
+}
+
+.fa {
+    font-size: 25;
+}
+
+TextField {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    background-color: rgb(221, 221, 221);
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+}
+
+:host-context(.ns-dark) TextField {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+    background-color: black !important;
+}
+
+.or {
+    padding: 15;
+    text-align: center;
+    color: dimgray;
+}
+
+.signup {
+    text-align: center;
+}

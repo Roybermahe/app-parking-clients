@@ -1,0 +1,40 @@
+<ActionBar class="action-bar">
+  <GridLayout rows="*" columns="auto,*" (tap)="onBack()">
+      <label col="0" row="0">
+          <FormattedString>
+              <span text="arrow_back_ios" class="mat-icon"></span>
+              <span text=" Back"></span>
+          </FormattedString>
+      </label>
+  </GridLayout>
+</ActionBar>
+<StackLayout class="form">
+    <Image src="res://clickparklogo" width="60%" class="img-regis"></Image>
+    <GridLayout rows="auto,auto" class="txt-des" columns="*">
+        <Label row="0" col="0" text="Gestión zona O.R.A" class="txt-logo-2" textWrap="true"></Label>
+    </GridLayout>
+    <TextField #usuario class="input" autocorrect="true" hint="Nombre de usuario"></TextField>
+    <TextField #correo class="input" keyboardType="email" hint="Correo electronico"></TextField>
+    <TextField #pass secure="true" autocorrect="false" class="input" hint="Contraseña"></TextField>
+    <TextField #passcfrm secure="true" autocorrect="false" class="input" hint="Confirmar contraseña"></TextField>
+    <GridLayout rows="auto" columns="auto, *">
+        <CheckBox col="0" row="0" [checked]="terms"></CheckBox>
+        <Label col="1" row="0" textWrap="true">
+            <FormattedString>
+                <span text="Acepta los "></span>
+                <span class="link" text="terminos"></span>
+                <span text=" y "></span>
+                <span class="link" text="condiciones"></span>
+                <span text=" de uso del servicio"></span>
+            </FormattedString>
+        </Label>
+    </GridLayout>
+    <Button class="btn-register" text="Registrarme"></Button>
+    <Label class="or" text="Or" textWrap="true"></Label>
+    <Button class="btn-google" (tap)="googleSign()">
+        <FormattedString>
+            <span class="fa" text="&#xf1a0;"></span>
+            <span class="btng-des" text="  Sign up with google"></span>
+        </FormattedString>
+    </Button>
+</StackLayout>

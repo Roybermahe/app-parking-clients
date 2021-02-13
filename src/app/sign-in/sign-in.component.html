@@ -1,0 +1,18 @@
+<StackLayout class="form">
+    <Image src="res://clickparklogo" width="50%" class="img-logo"></Image>
+    <GridLayout rows="auto,auto" class="txt-des" columns="*">
+        <Label row="0" col="0" text="Gestión zona O.R.A" class="txt-logo-2" textWrap="true"></Label>
+    </GridLayout>
+    <TextField #correo class="input" keyboardType="email" hint="Correo electronico"></TextField>
+    <TextField #pass secure="true" autocorrect="false" class="input" hint="Contraseña"></TextField>
+    <CheckBox col="0" row="0" [checked]="recordUsPass" text=" Recordar usuario y contraseña"></CheckBox>
+    <Button class="btn-register" text="Iniciar Sesion"></Button>
+    <button class="btn-link signup" text="Aun no estas registrado ?" nsRouterLink="/register" textWrap="true"></button>
+    <Label class="or" text="Or" textWrap="true"></Label>
+    <Button class="btn-google" (tap)="googleSign()" nsRouterLink="/principal">
+        <FormattedString>
+            <span class="fa" text="&#xf1a0;"></span>
+            <span class="btng-des" text="  Sign In with google"></span>
+        </FormattedString>
+    </Button>
+</StackLayout>

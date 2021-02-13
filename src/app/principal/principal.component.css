@@ -1,0 +1,29 @@
+.img-regis {
+    margin-top: 20;
+}
+
+.btn-text {
+    font-size: 10;
+}
+
+Button {
+    height: 80;
+    width: 95;
+    border-radius: 5;
+}
+
+.fa {
+    font-size: 30;
+}
+
+.img-text {
+    text-align: center;
+}
+
+.container {
+    padding: 20%;
+}
+
+.stk-logo {
+    margin-top: 20%;
+}

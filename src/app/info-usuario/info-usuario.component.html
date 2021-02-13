@@ -1,0 +1,29 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*, *,30" columns="auto, *, auto">
+        <label class="mat-icon btn-nav" col="0" row="0" text="help_outline"></label>
+        <label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>
+        <Image width="80" height="80" src="font://&#xf2be;" col="0" row="1" colSpan="3" class="fa img-user-fake"
+            loadMode="async" stretch="aspectFit"></Image>
+    </GridLayout>
+</ActionBar>
+<ScrollView>
+    <GridLayout rows="*, auto" columns="*">
+        <StackLayout row="0" col="0" class="container">
+            <Label text="Información de usuario" class="info-label" textWrap="true"></Label>
+            <GridLayout rows="auto, auto, auto, auto, auto" columns="auto, *">
+                <Label text="DNI:" class="info-label" row="0" col="0"></Label>
+                <Label text="NOMBRE:" class="info-label" row="1" col="0"></Label>
+                <Label text="TEL:" class="info-label" row="2" col="0"></Label>
+                <Label text="VEHICULOS:" class="info-label" row="3" col="0"></Label>
+                <Label text="CORREO" class="info-label" row="4" col="0"></Label>
+
+                <Label text="DNI:" class="input-label" row="0" col="1"></Label>
+                <Label text="NOMBRE:" class="input-label" row="1" col="1"></Label>
+                <Label text="TEL:" class="input-label" row="2" col="1"></Label>
+                <Label text="VEHICULOS:" class="input-label" row="3" col="1"></Label>
+                <Label text="CORREO" class="input-label" row="4" col="1"></Label>
+            </GridLayout>
+        </StackLayout>
+        <Button row="1" col="0" class="btn-actualizar info-label" text="ACTUALIZAR"></Button>
+    </GridLayout>
+</ScrollView>

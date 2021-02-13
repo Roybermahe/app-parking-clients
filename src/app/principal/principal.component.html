@@ -1,0 +1,50 @@
+<StackLayout>
+    <StackLayout class="stk-logo">
+        <Image src="res://clickparklogo" width="60%" class="img-regis"></Image>
+        <Label text="GESTION ZONA O.R.A" class="img-text" textWrap="true"></Label>
+    </StackLayout>
+    <GridLayout class="container" rows="auto, auto, auto" columns="*,*,*">
+        <Button row="0" col="0" nsRouterLink="/anuncios">
+            <FormattedString>
+                <span text="&#xf1ea;" class="fa"></span>
+                <span text="\nAnuncios" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+        <Button row="0" col="1" nsRouterLink="/map-parking">
+            <FormattedString>
+                <span text="&#xf041;" class="fa"></span>
+                <span text="\nParking" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+        <Button row="0" col="2" nsRouterLink="/vehicles">
+            <FormattedString>
+                <span text="&#xf1b9;" class="fa"></span>
+                <span text="\nVehiculos" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+        <Button row="1" col="0" nsRouterLink="/infoUsuario">
+            <FormattedString>
+                <span text="&#xf2be;" class="fa"></span>
+                <span text="\nMis Datos" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+        <Button row="1" col="1" nsRouterLink="/sanziones">
+            <FormattedString>
+                <span text="&#xf069;" class="fa"></span>
+                <span text="\nSanziones" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+        <Button row="1" col="2">
+            <FormattedString>
+                <span text="&#xf129;" class="fa"></span>
+                <span text="\nAbout" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+        <Button row="2" col="1" (tap)="onLoginOut()">
+            <FormattedString>
+                <span text="&#xf08b;" class="fa"></span>
+                <span text="\nSalir" class="btn-text"></span>
+            </FormattedString>
+        </Button>
+    </GridLayout>
+</StackLayout>

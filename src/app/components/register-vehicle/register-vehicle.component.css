@@ -1,0 +1,23 @@
+TextField {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+}
+
+:host-context(.ns-dark) TextField {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+}
+
+.title {
+    padding-left: 20;
+}
+
+.dialog {
+    padding: 5%;
+}

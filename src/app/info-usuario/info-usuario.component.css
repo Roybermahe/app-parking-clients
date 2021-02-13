@@ -1,0 +1,35 @@
+.action-bar {
+    background-color: #408CFF  !important;
+}
+
+.btn-nav {
+    font-size: 25;
+    padding: 8;
+    color: white;
+}
+
+.img-user-fake {
+    border-radius: 50;
+    border-color: white;
+    border-width: 2 2 2 2;
+    font-size: 50;
+    color: white;
+}
+
+.info-label {
+    font-weight: bold;
+}
+
+.input-label {
+    font-weight: 100;
+    text-align: right;
+}
+
+.input-label, .info-label {
+    font-size: 15;
+}
+
+.btn-actualizar {
+    background-color: #408CFF !important;
+    color: white;
+}

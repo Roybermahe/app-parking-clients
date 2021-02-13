@@ -1,0 +1,23 @@
+.action-bar {
+    background-color: #408CFF  !important;
+}
+.btn-add-vehicle {
+    background-color: white !important;
+    color: black;
+    padding: 4;
+}
+
+.btn-add-vehiculo {
+    background-color: white !important;
+    color: rgb(63, 60, 60) !important;
+    font-size: 18;
+}
+.btn-add-vehiculo:active {
+    color: black !important;
+}
+
+.btn-nav {
+    font-size: 25;
+    padding: 8;
+    color: white;
+}
