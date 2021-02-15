@@ -36,7 +36,6 @@ export class AuthService {
             if (error) {
               reject(error);
             } else {
-              
               resolve(true);
             }
           }

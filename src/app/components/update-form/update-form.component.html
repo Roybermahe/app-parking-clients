@@ -1,0 +1,5 @@
+<StackLayout width="280" height="100%" class="dialog">
+    <TextField hint="Nombres y Apellidos" [(ngModel)]="user.nombre"></TextField>
+    <TextField hint="Telefono" keyboardType="phone" [(ngModel)]="user.telefono"></TextField>
+    <button text="Actualizar Datos" (tap)="onSubmit()"></button>
+</StackLayout>

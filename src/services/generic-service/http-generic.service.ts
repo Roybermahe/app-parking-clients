@@ -16,7 +16,7 @@ export class HttpGenericService<T, M> {
   constructor(
     private readonly http: HttpClient
   ) {
-    this.END_POINT = "http://api.secretariavirtual.cat/api";
+    this.END_POINT = "https://api.secretariavirtual.cat/api";
   }
 
   Get(route: string): Observable<M> {

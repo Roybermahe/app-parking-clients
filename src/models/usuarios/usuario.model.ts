@@ -5,4 +5,5 @@ export class Usuario {
   nombre?: string;
   email?: string;
   telefono?: string;
+  userState?: string;
 }

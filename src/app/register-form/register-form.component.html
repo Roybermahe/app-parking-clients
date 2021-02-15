@@ -18,7 +18,7 @@
     <TextField #pass secure="true" autocorrect="false" class="input" hint="Contraseña"></TextField>
     <TextField #passcfrm secure="true" autocorrect="false" class="input" hint="Confirmar contraseña"></TextField>
     <GridLayout rows="auto" columns="auto, *">
-        <CheckBox col="0" row="0" [checked]="terms"></CheckBox>
+        <CheckBox col="0" row="0" [checked]="terms" (checkedChange)="onCheckTerms($event)"></CheckBox>
         <Label col="1" row="0" textWrap="true">
             <FormattedString>
                 <span text="Acepta los "></span>
@@ -29,12 +29,5 @@
             </FormattedString>
         </Label>
     </GridLayout>
-    <Button class="btn-register" text="Registrarme"></Button>
-    <Label class="or" text="Or" textWrap="true"></Label>
-    <Button class="btn-google" (tap)="googleSign()">
-        <FormattedString>
-            <span class="fa" text="&#xf1a0;"></span>
-            <span class="btng-des" text="  Sign up with google"></span>
-        </FormattedString>
-    </Button>
+    <Button class="btn-register" text="Registrarme" (tap)="onSubmit()"></Button>
 </StackLayout>

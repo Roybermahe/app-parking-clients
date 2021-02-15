@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDialogParams, RouterExtensions } from "@nativescript/angular"
-import { Page } from '@nativescript/core';
 import { vehiculos } from '../../../models/vehiculos/vehiculos.model';
 
 @Component({
