@@ -1,1 +1,26 @@
-<Label class="map-parking" text="Hello MapParkingComponent!"></Label>
+<StackLayout>
+    <ContentView height="100%" width="100%">
+        <Mapbox
+                accessToken="{{tokenMap}}"
+                mapStyle="traffic_day"
+                latitude="37.489492"
+                longitude="-2.773094"
+                hideCompass="true"
+                zoomLevel="18"
+                showUserLocation="true"
+                disableZoom="false"
+                disableRotation="false"
+                disableScroll="false"
+                disableTilt="true"
+                (mapReady)="onMapReady($event)">
+        </Mapbox>
+    </ContentView>
+</StackLayout>
+<StackLayout verticalAlignment="bottom" height="290" width="100%">
+    <GridLayout rows="auto,auto,auto" columns="*,*,*" backgroundColor="white" class="map-form">
+        <label row="0" colSpan="3" col="0" class="lbl-text" text="Seleccione un vehiculo y establezca un tiempo de permanencia en la zona" textWrap="true"></label>
+        <Button row="1" col="2" text="query_builder" class="mat-icon btn-nav"></Button>
+        <Button row="1" col="0" colSpan="2" text="Elegir vehiculo" (tap)="selectVehicle()"></Button>
+        <Button row="2" col="0" colSpan="3" text="Estacionarse en esta zona" class="btn-sub"></Button>
+    </GridLayout>
+</StackLayout>

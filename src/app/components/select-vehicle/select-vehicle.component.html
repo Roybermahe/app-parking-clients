@@ -1,0 +1,5 @@
+<StackLayout width="280" height="100%" class="dialog">
+    <ng-container *ngFor="let item of vehiculos; let i = index">
+        <CheckBox #check boxType="circle" text="{{item.matricula.toUpperCase()}}" class="text-check" (checkedChange)="onSelectChange(i)" ></CheckBox>
+    </ng-container>
+</StackLayout>

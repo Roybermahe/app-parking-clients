@@ -1,15 +1,37 @@
 <ActionBar class="action-bar">
     <GridLayout rows="*, *,30" columns="auto, *, auto">
-        <label class="mat-icon btn-nav" col="0" row="0" text="help_outline"></label>
+        <label class="mat-icon btn-nav" col="0" row="0" (tap)="onBack()" text="keyboard_backspace"></label>
         <label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>
         <Image width="50%" src="res://autologo" col="0" row="1" colSpan="3"></Image>
     </GridLayout>
 </ActionBar>
-<StackLayout>
-    <Button class="btn-add-vehiculo" (tap)="onRegisterVehicle()">
+<GridLayout rows="auto, *" columns="*">
+    <Button  row="0" col="0" class="btn-add-vehiculo" (tap)="onRegisterVehicle()">
         <FormattedString>
             <span text="add" class="mat-icon btn-ico"></span>
             <span text=" Agregar vehiculo" class="btn-add-text"></span>
         </FormattedString>
     </Button>
-</StackLayout>
+    <RadListView [items]="listVehiculos" row="1" col="0">
+        <ng-template let-item="item">
+            <GridLayout rows="auto" columns="auto, *, auto" class="template">
+                <Image src="res://caricon" width="20%" row="0" col="0"></Image>
+                <StackLayout row="0" col="1">
+                    <label>
+                        <FormattedString>
+                            <span class="span-mark" text="Marca: "></span>
+                            <span text="{{item.marca}}"></span>
+                        </FormattedString>
+                    </label>
+                    <label>
+                        <FormattedString>
+                            <span class="span-mark" text="Matricula: "></span>
+                            <span text="{{item.matricula}}"></span>
+                        </FormattedString>
+                    </label>
+                </StackLayout>
+                <label class="mat-icon btn-nav del-btn" row="0" col="2" text="delete" (tap)="onDelete(item.id)"></label>
+            </GridLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>

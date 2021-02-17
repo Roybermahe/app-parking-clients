@@ -7,4 +7,6 @@ export class vehiculos {
   marca?: string;
   etiqueta?: string;
   tipo?: tiposVehiculo;
+  idUsuario?: number;
+  tipoVehiculo?: number;
 }

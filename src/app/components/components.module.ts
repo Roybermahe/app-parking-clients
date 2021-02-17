@@ -3,6 +3,7 @@ import { NativeScriptCommonModule, NativeScriptFormsModule, NativeScriptHttpClie
 import { TNSCheckBoxModule } from "@nstudio/nativescript-checkbox/angular";
 import { RegisterVehicleComponent } from "./register-vehicle/register-vehicle.component";
 import { updateFormComponent } from "./update-form/update-form.component"
+import {selectVehicleComponent} from "./select-vehicle/select-vehicle.component";
 
 @NgModule({
     schemas: [
@@ -16,12 +17,14 @@ import { updateFormComponent } from "./update-form/update-form.component"
     ],
     declarations: [
         RegisterVehicleComponent,
-        updateFormComponent
+        updateFormComponent,
+        selectVehicleComponent
 
     ],
     exports: [
         RegisterVehicleComponent,
-        updateFormComponent
+        updateFormComponent,
+        selectVehicleComponent
     ]
 })
 

@@ -21,3 +21,15 @@
     padding: 8;
     color: white;
 }
+
+.span-mark {
+    font-weight: bold;
+}
+
+.template {
+    padding: 10;
+}
+
+.del-btn {
+  color: #408CFF;
+}

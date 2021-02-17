@@ -1,3 +1,25 @@
-.map-parking {
+.btn-nav {
+    font-size: 25;
+    padding: 8;
+    color: white;
+}
 
+Button {
+    margin: 2;
+}
+
+.btn-sub {
+    background-color: #408CFF;
+    font-weight: bold;
+    color: white;
+}
+
+.lbl-text {
+    color: dimgray;
+    text-align: center;
+    width: 80%;
+}
+
+.map-form {
+    padding: 10;
 }

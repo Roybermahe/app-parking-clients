@@ -50,7 +50,6 @@ export class SignInComponent implements OnInit {
 
 	googleSign() {
         let token = JSON.parse(AppSettings.getString("_sessionmail",null));
-        console.log(token);
         if(token == null) {
             this.ngZone.runTask(async () => {
                 let data = await this.authService.tnsOauthLogin('google');

@@ -1,5 +1,5 @@
 <StackLayout width="280" height="100%" class="dialog">
-    <TextField hint="Matricula" ></TextField>
-    <TextField hint="Marca del vehiculo"></TextField>
-    <button text="Guardar vehiculo"></button>
+    <TextField hint="Matricula" [(ngModel)]="vehiculo.matricula"></TextField>
+    <TextField hint="Marca del vehiculo" [(ngModel)]="vehiculo.marca"></TextField>
+    <button text="Guardar vehiculo" (tap)="onSubmit()"></button>
 </StackLayout>

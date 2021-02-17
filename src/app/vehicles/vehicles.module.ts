@@ -3,11 +3,13 @@ import { NativeScriptCommonModule, ModalDialogService } from "@nativescript/angu
 import { VehiclesComponent } from "./vehicles.component";
 import { VehiclesRoutingModule } from "./vehicles.routes";
 import { RegisterVehicleComponent } from "../components/register-vehicle/register-vehicle.component"
+import {NativeScriptUIListViewModule} from "nativescript-ui-listview/angular";
 
 @NgModule({
     imports: [
+        NativeScriptUIListViewModule,
         NativeScriptCommonModule,
-        VehiclesRoutingModule
+        VehiclesRoutingModule,
     ],
     declarations: [
         VehiclesComponent

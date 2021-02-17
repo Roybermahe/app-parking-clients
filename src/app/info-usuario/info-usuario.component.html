@@ -1,6 +1,6 @@
 <ActionBar class="action-bar">
     <GridLayout rows="*, *,30" columns="auto, *, auto">
-        <label class="mat-icon btn-nav" col="0" row="0" text="help_outline"></label>
+        <label class="mat-icon btn-nav" col="0" row="0" text="keyboard_backspace" (tap)="onBack()"></label>
         <label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>
         <Image width="80" height="80" src="font://&#xf2be;" col="0" row="1" colSpan="3" class="fa img-user-fake"
             loadMode="async" stretch="aspectFit"></Image>
@@ -17,10 +17,10 @@
                 <Label text="VEHICULOS:" class="info-label" row="3" col="0"></Label>
                 <Label text="CORREO" class="info-label" row="4" col="0"></Label>
 
-                <Label class="input-label" [text]="usuario.nombre" row="1" col="1"></Label>
-                <Label class="input-label" [text]="usuario.telefono" row="2" col="1"></Label>
+                <Label class="input-label" text="{{usuario.nombre}}" row="1" col="1"></Label>
+                <Label class="input-label" text="{{usuario.telefono}}" row="2" col="1"></Label>
                 <Label class="input-label"  row="3" col="1"></Label>
-                <Label class="input-label" [text]="usuario.email" row="4" col="1"></Label>
+                <Label class="input-label" text="{{email}}" row="4" col="1"></Label>
             </GridLayout>
         </StackLayout>
         <Button row="1" col="0" class="btn-actualizar info-label" text="ACTUALIZAR" (tap)="onUpdate()"></Button>

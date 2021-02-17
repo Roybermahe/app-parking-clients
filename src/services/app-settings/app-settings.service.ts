@@ -1,17 +1,8 @@
-import { Injectable } from '@angular/core';
-import * as AppSettings from '@nativescript/core/application-settings';
+import { Injectable, EventEmitter } from '@angular/core';
 
-@Injectable({ 
-    providedIn: 'root' 
+@Injectable({
+    providedIn: 'root'
 })
-export class AppSettingService<T> {
-    constructor() { }
-
-    saveData(name: string,data: T) {
-        AppSettings.setString(name, JSON.stringify(data));
-    }
-
-    getData(name: string): T {
-        return <T>JSON.parse(AppSettings.getString(name, null)); 
-    }
+export class MisVehiculosService {
+    vehiculoSave = new EventEmitter<Boolean>()
 }
