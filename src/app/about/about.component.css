@@ -1,3 +1,7 @@
+.container {
+    padding: 10;
+}
+
 .action-bar {
     background-color: #408CFF  !important;
 }
@@ -6,10 +10,4 @@
     font-size: 25;
     padding: 8;
     color: white;
-}
-
-.anuncio {
-    margin: 10 10 10 10;
-    border-radius: 15;
-    padding: 10;
 }

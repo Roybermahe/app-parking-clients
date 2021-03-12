@@ -8,6 +8,7 @@ import {
 import { MapParkingComponent } from "./map-parking.component";
 import { MapParkingRoutingModule } from "./map-parking.routes"
 import {selectVehicleComponent} from "../components/select-vehicle/select-vehicle.component";
+import {SelectTimeComponent} from "../components/selectime/select-time.component";
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import {selectVehicleComponent} from "../components/select-vehicle/select-vehicl
         ModalDialogService
     ],
     entryComponents: [
-        selectVehicleComponent
+        selectVehicleComponent,
+        SelectTimeComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

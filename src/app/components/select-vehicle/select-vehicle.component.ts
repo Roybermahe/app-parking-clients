@@ -38,7 +38,7 @@ export class selectVehicleComponent implements OnInit{
             this.vehiculos = item.getAll;
         }, err => {
             this.vehiculos.slice(0,this.vehiculos.length);
-            this.vehiculos.push(JSON.parse(AppSettings.getString("_mivehiculos", JSON.stringify([]))));
+            this.vehiculos = JSON.parse(AppSettings.getString("_mivehiculos", JSON.stringify([])));
         });
     }
 }

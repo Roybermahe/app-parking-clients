@@ -34,8 +34,10 @@ export class RegisterVehicleComponent implements OnInit {
 	        this.vehicleSvc.Post("vehiculos", this.vehiculo).subscribe(resp => {
                 alert({ title: "ClickPark", message: resp.message, okButtonText: "Ok"});
                 this.misvhcls.vehiculoSave.emit(true);
+                this.onClose();
             }, err => {
 	            alert({title: "Message", message: "", okButtonText: "Ok" });
+                this.onClose();
             });
         } else {
 	        alert({title: "Message", message: "Ingrese la matricula y la marca del vehiculo.", okButtonText: "Ok"})

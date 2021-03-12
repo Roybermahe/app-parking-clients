@@ -80,6 +80,7 @@ export class SignInComponent implements OnInit {
                 let msg = resp.message.split('|')[0];
                 this.onAlert("ClickPark", msg,"Ok");
                 if(resp.message.toLowerCase().includes('pass')) {
+                    AppSettings.setString("_loginInit",user.authenticatedForm);
                     this.route.navigate(["principal/unk/", user.authenticatedForm.toLowerCase() ], { clearHistory: true, animated: true, transition: {
                             name: "slide",
                             duration: 1000

@@ -26,9 +26,11 @@ export class updateFormComponent implements OnInit {
             this.user.id = this._params.context.userId;
             this.UsuarioSvc.Put("usuarios",this.user).subscribe(async (resp) => {
                 await alert({title: "ClickPark", message: resp.message, okButtonText: "Ok" });
+                this._params.closeCallback();
             }, async (err) => {
                 console.log(err);
                 await alert({title: "Message", message: "Ocurrio un error, intentelo de nuevo mas tarde.", okButtonText: "Ok" });
+                this._params.closeCallback();
             });
         } else {
            await alert({title: "Message", message: "LLene los campos nombre y telefono para actualizar sus datos.", okButtonText: "Ok" });

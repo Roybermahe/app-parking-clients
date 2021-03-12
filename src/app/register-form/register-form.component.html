@@ -13,10 +13,10 @@
     <GridLayout rows="auto,auto" class="txt-des" columns="*">
         <Label row="0" col="0" text="Gestión zona O.R.A" class="txt-logo-2" textWrap="true"></Label>
     </GridLayout>
-    <TextField #usuario class="input" autocorrect="true" hint="Nombre de usuario"></TextField>
-    <TextField #correo class="input" keyboardType="email" hint="Correo electronico"></TextField>
-    <TextField #pass secure="true" autocorrect="false" class="input" hint="Contraseña"></TextField>
-    <TextField #passcfrm secure="true" autocorrect="false" class="input" hint="Confirmar contraseña"></TextField>
+    <TextField #usuario returnKeyType="next" class="input" autocorrect="true" hint="Nombre de usuario"></TextField>
+    <TextField #correo returnKeyType="next" class="input" keyboardType="email" hint="Correo electronico"></TextField>
+    <TextField #pass returnKeyType="next" secure="true" autocorrect="false" class="input" hint="Contraseña"></TextField>
+    <TextField #passcfrm returnKeyType="done" secure="true" autocorrect="false" class="input" hint="Confirmar contraseña"></TextField>
     <GridLayout rows="auto" columns="auto, *">
         <CheckBox col="0" row="0" [checked]="terms" (checkedChange)="onCheckTerms($event)"></CheckBox>
         <Label col="1" row="0" textWrap="true">

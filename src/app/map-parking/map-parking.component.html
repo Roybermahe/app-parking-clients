@@ -6,11 +6,11 @@
                 latitude="37.489492"
                 longitude="-2.773094"
                 hideCompass="true"
-                zoomLevel="18"
+                zoomLevel="16"
                 showUserLocation="true"
-                disableZoom="false"
-                disableRotation="false"
-                disableScroll="false"
+                disableZoom="true"
+                disableRotation="true"
+                disableScroll="true"
                 disableTilt="true"
                 (mapReady)="onMapReady($event)">
         </Mapbox>
@@ -19,8 +19,8 @@
 <StackLayout verticalAlignment="bottom" height="290" width="100%">
     <GridLayout rows="auto,auto,auto" columns="*,*,*" backgroundColor="white" class="map-form">
         <label row="0" colSpan="3" col="0" class="lbl-text" text="Seleccione un vehiculo y establezca un tiempo de permanencia en la zona" textWrap="true"></label>
-        <Button row="1" col="2" text="query_builder" class="mat-icon btn-nav"></Button>
-        <Button row="1" col="0" colSpan="2" text="Elegir vehiculo" (tap)="selectVehicle()"></Button>
-        <Button row="2" col="0" colSpan="3" text="Estacionarse en esta zona" class="btn-sub"></Button>
+        <Button row="1" col="2" [text]="textTime" class="{{parkinTime == 0 ? 'mat-icon  clk-btn':''}}" (tap)="tapSelectTime()"></Button>
+        <Button row="1" col="0" colSpan="2" [text]="btnAuto" (tap)="selectVehicle()"></Button>
+        <Button row="2" col="0" colSpan="3" text="Estacionarse en esta zona" class="btn-sub" (tap)="GuardarParking()"></Button>
     </GridLayout>
 </StackLayout>

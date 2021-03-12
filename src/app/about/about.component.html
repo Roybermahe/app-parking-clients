@@ -1,0 +1,22 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="auto, *">
+
+        <label class="btn-nav" col="0" row="0" (tap)="onBack()">
+            <FormattedString>
+                <span class="mat-icon" text="keyboard_backspace"></span>
+                <span text=" About"></span>
+            </FormattedString>
+        </label>
+        <!--<label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>-->
+    </GridLayout>
+</ActionBar>
+<StackLayout class="container">
+    <Label text="Preguntas frecuentes" textWrap="true"></Label>
+    <Button text="¿Que es la zona azul?" ></Button>
+    <Button text="¿Como son los pagos?" ></Button>
+    <Button text="¿Como pago mis sanciones?" ></Button>
+    <Button text="¿Cuando No puedo estacionarme en zona azul?" ></Button>
+    <Button text="¿Como son los horarios de zona azul?" ></Button>
+    <Button text="¿Que tipos de zonas hay en mi ciudad?" ></Button>
+</StackLayout>
+

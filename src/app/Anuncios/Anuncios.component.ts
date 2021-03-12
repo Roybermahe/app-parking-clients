@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RouterExtensions} from "@nativescript/angular";
+import {ObservableArray} from "@nativescript/core";
 
 @Component({
 	moduleId: module.id,
@@ -9,7 +11,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class AnunciosComponent implements OnInit {
 
-	constructor() { }
+    list: string[] = [ "", "", ""]
+    listAnuncios = new ObservableArray<string>();
+    constructor(
+        private routeExt: RouterExtensions
+    ) { }
 
-	ngOnInit() { }
+    ngOnInit() {
+        this.listAnuncios.push(this.list);
+    }
+
+    onBack() {
+        this.routeExt.back();
+    }
 }

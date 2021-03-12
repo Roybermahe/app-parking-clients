@@ -1,1 +1,40 @@
-<Label class="sanziones" text="Hello SanzionesComponent!"></Label>
+<ActionBar class="action-bar">
+    <GridLayout rows="*, *,auto" columns="auto, *, auto">
+        <label class="btn-nav" col="0" row="0" (tap)="onBack()">
+            <FormattedString>
+                <span class="mat-icon" text="keyboard_backspace"></span>
+                <span text=" Sanciónes"></span>
+            </FormattedString>
+        </label>
+        <!--<label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>-->
+    </GridLayout>
+</ActionBar>
+<GridLayout rows="auto,*" columns="*">
+    <SearchBar row="0" hint="Buscar sanción por codigo ejm: 7, 8 .. 100"
+               textFieldHintColor="whitesmoke"
+               (submit)="onSubmit($event)"
+    ></SearchBar>
+    <StackLayout row="1" *ngIf="sanzionView != null">
+        <GridLayout rows="auto, auto, auto" columns="auto,*">
+            <Label class="t-lugar" row="0" col="0" colSpan="2" text="Lugar" textWrap="true"></Label>
+            <Label row="1" class="l-lugar" col="0" text="Vía: " textWrap="true"></Label>
+            <Label row="2" class="l-lugar" col="0" text="Nro: " textWrap="true"></Label>
+
+            <Label row="1" col="1" class="l-des" text="{{sanzionView.via}}" textWrap="true"></Label>
+            <Label row="2" col="1" class="l-des" text="{{sanzionView.lugar}}" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout rows="auto, auto, auto" columns="auto,*">
+            <Label row="0" class="t-lugar" col="0" colSpan="2" text="Vehiculo" textWrap="true"></Label>
+            <Label row="1" class="l-lugar" col="0" text="Matricula: " textWrap="true"></Label>
+            <Label row="2" class="l-lugar" col="0" text="Marca: " textWrap="true"></Label>
+
+            <Label row="1" col="1" class="l-des" text="{{sanzionView.vehiculo.matricula}}" textWrap="true"></Label>
+            <Label row="2" col="1" class="l-des" text="{{sanzionView.vehiculo.marca}}" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout rows="auto, auto" columns="auto,*">
+            <Label row="0" class="t-lugar" col="0" colSpan="2" text="Hecho" textWrap="true"></Label>
+            <Label row="1" class="l-lugar" col="0" text="Hecho: " textWrap="true"></Label>
+            <Label row="1" col="1" class="l-des" text="{{sanzionView.hecho}}" textWrap="true"></Label>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

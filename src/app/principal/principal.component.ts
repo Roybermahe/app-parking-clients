@@ -13,7 +13,8 @@ import {UsuarioService} from "../../services/usuario/usuario.service";
 	templateUrl: './principal.component.html',
 	styleUrls: ['./principal.component.css']
 })
-export class PrincipalComponent implements OnInit {
+export class PrincipalComponent implements OnInit, OnDestroy {
+    signinAvailable:boolean = true;
 	constructor(
 		page: Page,
 		private authService: AuthService,
@@ -25,19 +26,31 @@ export class PrincipalComponent implements OnInit {
         page.actionBarHidden = true;
     }
 
+    async ngOnDestroy() {
+
+    }
+
 	async ngOnInit() {
 		let email = this.router.snapshot.paramMap.get('email');
 		let google = JSON.parse(this.router.snapshot.paramMap.get('google'));
+        let routePrincipal = AppSettings.getString("_loginInit", "");
+        if(routePrincipal.length > 0){
+            this.signinAvailable = false;
+            this.updateUserInfo(routePrincipal);
+        }
 		if(google != null) {
-			this.registerService.Post("account/google", { username: "GOOGLE", password: "GOOGLE", passwordConfirm: "GOOGLE", email: google.email }).subscribe(resp => {
-				AppSettings.setString("_loginInit", google.email);
-				this.updateUserInfo(google.email);
-			});
+			this.onRegisterSign(google.email);
 		}
 		if(email != null) {
-			AppSettings.setString("_loginInit", email);
+		    this.signinAvailable = false;
             this.updateUserInfo(email);
 		}
+		setTimeout(() => {
+            let token = JSON.parse(AppSettings.getString("_sessionmail",null));
+            if(token != null){
+                this.onRegisterSign(token.email);
+            }
+        }, 2000)
 	}
 
 	onLoginOut() {
@@ -46,14 +59,28 @@ export class PrincipalComponent implements OnInit {
             AppSettings.remove("_loginInit");
             AppSettings.remove("_sessionmail");
             AppSettings.remove("_userInfo");
-            this.route.navigate(["signin"], { animated: true, transition: { duration: 1000, name: "slide" }, clearHistory: true})
+            AppSettings.remove("_mivehiculos");
+            this.signinAvailable = true;
         })
         .catch((e) => console.log("Error: " + e));
 	}
 
     updateUserInfo(email: string) {
         this.usuarioService.Get(`usuarios/req/${email}`).subscribe(resp => {
-            AppSettings.setString("_userInfo",JSON.stringify(resp.getOne));
+            AppSettings.setString("_loginInit",resp.getOne.email);
+            AppSettings.setString("_userInfo", JSON.stringify(resp.getOne));
+            this.signinAvailable = false;
         });
 	}
+	register() {
+	    this.route.navigate(['/signin']);
+    }
+
+    onRegisterSign(email: string) {
+        this.registerService.Post("account/google", { username: "GOOGLE", password: "GOOGLE", passwordConfirm: "GOOGLE", email: email }).subscribe(resp => {
+            AppSettings.setString("_loginInit",email);
+            this.updateUserInfo(email);
+            this.signinAvailable = false;
+        });
+    }
 }

@@ -1,1 +1,18 @@
-<Label class="Anuncios" text="Hello AnunciosComponent!"></Label>
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="auto, *, auto">
+        <label class="btn-nav" col="0" row="0" (tap)="onBack()">
+            <FormattedString>
+                <span class="mat-icon" text="keyboard_backspace"></span>
+                <span text=" Anuncios"></span>
+            </FormattedString>
+        </label>
+<!--        <label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>-->
+    </GridLayout>
+</ActionBar>
+<RadListView [items]="listAnuncios">
+     <ng-template let-item="item">
+         <StackLayout>
+             <Image class="anuncio" loadMode="async" src="https://image.freepik.com/vector-gratis/megafono-anuncio-importante-plano_149152-517.jpg" stretch="aspectFit" width="100%"></Image>
+         </StackLayout>
+     </ng-template>
+</RadListView>

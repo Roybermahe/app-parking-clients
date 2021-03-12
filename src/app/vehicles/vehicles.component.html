@@ -1,7 +1,7 @@
 <ActionBar class="action-bar">
     <GridLayout rows="*, *,30" columns="auto, *, auto">
         <label class="mat-icon btn-nav" col="0" row="0" (tap)="onBack()" text="keyboard_backspace"></label>
-        <label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>
+        <!--<label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>-->
         <Image width="50%" src="res://autologo" col="0" row="1" colSpan="3"></Image>
     </GridLayout>
 </ActionBar>
@@ -35,3 +35,4 @@
         </ng-template>
     </RadListView>
 </GridLayout>
+<ActivityIndicator [busy]="busy"></ActivityIndicator>

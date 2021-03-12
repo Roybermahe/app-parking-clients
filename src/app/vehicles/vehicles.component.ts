@@ -17,6 +17,7 @@ export class VehiclesComponent implements OnInit {
     usuario: Usuario = JSON.parse(AppSettings.getString("_userInfo", JSON.stringify(<Usuario>{
     email: '', telefono: 'actualizar', nombre: 'actualizar ' ,dni: 'actualizar', userState:"disable" })));
 
+    busy = true;
     listVehiculos = new ObservableArray<vehiculos>();
 	constructor(
 	    private routes: RouterExtensions,
@@ -31,14 +32,11 @@ export class VehiclesComponent implements OnInit {
             this.onLoadData();
         });
 	    this.onLoadData();
-        if(this.usuario.userState == "disable") {
-            alert({ title: "Message", message: "Debe actualizar sus datos para guardar sus vehiculos.", okButtonText: "Ok"});
-        }
     }
 
-	onRegisterVehicle() {
-        if(this.usuario.userState != "disable") {
-            this.modalService.showModal(RegisterVehicleComponent, {
+	async onRegisterVehicle() {
+        if(this.usuario.id) {
+            await this.modalService.showModal(RegisterVehicleComponent, {
                 fullscreen: false,
                 cancelable: true,
                 animated: true,
@@ -46,7 +44,7 @@ export class VehiclesComponent implements OnInit {
                 viewContainerRef: this.viewContainerRef
             });
         } else {
-            alert({ title: "Message", message: "Debe actualizar sus datos para guardar sus vehiculos.", okButtonText: "Ok"});
+            alert({ title: "Message", message: "Debe iniciar sesión.", okButtonText: "Ok"});
         }
 	}
 
@@ -59,9 +57,11 @@ export class VehiclesComponent implements OnInit {
             AppSettings.setString("_mivehiculos", JSON.stringify(item.getAll));
             this.listVehiculos = new ObservableArray<vehiculos>();
             this.listVehiculos.push(item.getAll);
+            this.busy = false;
         }, err => {
             this.listVehiculos = new ObservableArray<vehiculos>();
             this.listVehiculos.push(JSON.parse(AppSettings.getString("_mivehiculos", JSON.stringify([]))));
+            this.busy = false;
         });
     }
 
