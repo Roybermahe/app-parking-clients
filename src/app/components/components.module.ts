@@ -5,6 +5,7 @@ import { RegisterVehicleComponent } from "./register-vehicle/register-vehicle.co
 import { updateFormComponent } from "./update-form/update-form.component"
 import {selectVehicleComponent} from "./select-vehicle/select-vehicle.component";
 import {SelectTimeComponent} from "./selectime/select-time.component";
+import {monederoFormComponent} from "./monedero/monedero.component";
 
 @NgModule({
     schemas: [
@@ -20,13 +21,15 @@ import {SelectTimeComponent} from "./selectime/select-time.component";
         RegisterVehicleComponent,
         updateFormComponent,
         selectVehicleComponent,
-        SelectTimeComponent
+        SelectTimeComponent,
+        monederoFormComponent
     ],
     exports: [
         RegisterVehicleComponent,
         updateFormComponent,
         selectVehicleComponent,
-        SelectTimeComponent
+        SelectTimeComponent,
+        monederoFormComponent
     ]
 })
 

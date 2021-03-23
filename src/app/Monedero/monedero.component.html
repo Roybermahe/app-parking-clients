@@ -1,0 +1,31 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*, *,auto" columns="auto, *, auto">
+        <label class="btn-nav" col="0" row="0" (tap)="onBack()">
+            <FormattedString>
+                <span class="mat-icon" text="keyboard_backspace"></span>
+                <span text=" Monedero"></span>
+            </FormattedString>
+        </label>
+    </GridLayout>
+</ActionBar>
+<GridLayout class="money" rows="auto, *" columns="*">
+    <GridLayout rows="auto" columns="*, auto">
+        <StackLayout col="0" row="0">
+            <Label class="t-money" text="Monedero virtual" textWrap="true"></Label>
+            <Label class="d-money" text="{{ monederoActual | currency: 'EUR': true}}" textWrap="true"></Label>
+        </StackLayout>
+        <Button col="1" row="0" class="btn-pay" text="  Recargar  " (tap)="onRecargar()"></Button>
+    </GridLayout>
+    <GridLayout row="1" rows="auto, *" columns="*">
+        <Label row="0" text="History" textWrap="true"></Label>
+        <RadListView row="1" [items]="listHistory">
+            <ng-template let-item="item">
+                <StackLayout col="0" row="0">
+                    <Label class="f-money" text="fecha: {{ item.fechaRegistro | date: 'dd/MM/yyyy' }}" textWrap="true"></Label>
+                    <Label class="v-money" text="valor: {{ item.valor | currency: 'EUR': true}}" textWrap="true"></Label>
+                </StackLayout>
+            </ng-template>
+        </RadListView>
+    </GridLayout>
+</GridLayout>
+

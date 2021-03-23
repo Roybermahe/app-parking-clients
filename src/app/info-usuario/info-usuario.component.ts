@@ -45,7 +45,7 @@ export class InfoUsuarioComponent implements OnInit {
                 })));
             });
         });*/
-        //this.onVehiclesCount();
+        this.onVehiclesCount();
     }
 
     async onUpdate(){

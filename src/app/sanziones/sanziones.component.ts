@@ -3,7 +3,10 @@ import {RouterExtensions} from "@nativescript/angular";
 import {sanzionModel} from "../../models/sanziones/sanzion.model";
 import {ObservableArray, SearchBar} from "@nativescript/core";
 import {SanzionesService} from "../../services/snziones/sanziones.service";
-
+import {inAppBrowserService} from "../../services/app-settings/inAppBrowser.service";
+import * as AppSettings from "@nativescript/core/application-settings";
+import {alert} from "@nativescript/core/ui/dialogs";
+const sign = require('jwt-encode');
 @Component({
 	moduleId: module.id,
 	selector: 'sanziones',
@@ -19,7 +22,8 @@ export class SanzionesComponent implements OnInit {
 
 	constructor(
 	    private routeExt: RouterExtensions,
-        private sanzionSvc: SanzionesService
+        private sanzionSvc: SanzionesService,
+        private openUrl: inAppBrowserService
     ) { }
 
 	ngOnInit() {
@@ -37,13 +41,7 @@ export class SanzionesComponent implements OnInit {
 
         this.listSanzion = new ObservableArray<sanzionModel>();
         if(searchValue !== ""){
-            for (const i in this.source) {
-                if(this.source[i].id.toString().toLowerCase().indexOf(this.filterString) !== -1
-                ){
-                    this.sanzionView = this.source[i];
-                    console.log(this.source[i])
-                }
-            }
+            this.sanzionView = this.source.find(item => item.id == +searchValue);
         }else{
             this.listSanzion.push(this.source);
         }
@@ -59,4 +57,16 @@ export class SanzionesComponent implements OnInit {
         });
     }
 
+    async onPagarSancion() {
+	    let data = {
+	        idSanzion: this.sanzionView.id,
+            idVehiculo: this.sanzionView.vehiculo.id,
+            email: AppSettings.getString("_loginInit", "")
+        }
+        if(data.email.length > 0) {
+            await this.openUrl.openUrl(`https://paymentsclickpark.redlandsandwhales.com/Clickpark/Sancion/${sign(data, 'secret')}`);
+        } else {
+           await alert({title: "Message", message: "Debes iniciar sesión para realizar esta acción.", okButtonText: "Ok"});
+        }
+    }
 }

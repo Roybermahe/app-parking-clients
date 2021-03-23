@@ -78,6 +78,8 @@ export class SignInComponent implements OnInit {
         if(this.onValidSign()) {
             this.registSvc.Post("account/sign/unknown", user).subscribe(resp => {
                 let msg = resp.message.split('|')[0];
+                console.log(resp);
+                AppSettings.setString("_userId", `${resp.getOne.id}`);
                 this.onAlert("ClickPark", msg,"Ok");
                 if(resp.message.toLowerCase().includes('pass')) {
                     AppSettings.setString("_loginInit",user.authenticatedForm);

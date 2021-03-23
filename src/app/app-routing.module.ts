@@ -14,7 +14,9 @@ const routes: Routes = [
     { path: "anuncios", loadChildren: () => import("./Anuncios/Anuncios.module").then(m => m.AnunciosModule) },
     { path: "map-parking", loadChildren: () => import("./map-parking/map-parking.module").then(m => m.MapParkingModule) },
     { path: "sanziones", loadChildren: () => import("./sanziones/sanziones.module").then(m => m.SanzionesModule) },
-    { path: "about", loadChildren: () => import("./about/about.module").then(m => m.AboutModule) }
+    { path: "about", loadChildren: () => import("./about/about.module").then(m => m.AboutModule) },
+    { path: "monedero", loadChildren: () => import("./Monedero/monedero.module").then(m => m.monederoModule) }
+
 ];
 
 

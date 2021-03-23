@@ -24,7 +24,11 @@ export class selectVehicleComponent implements OnInit{
     ) {}
 
     async ngOnInit() {
-        this.onLoadData();
+        this.vehiculos.slice(0,this.vehiculos.length);
+        this.vehiculos = JSON.parse(AppSettings.getString("_mivehiculos", JSON.stringify([])));
+        if(this.vehiculos.length == 0) {
+            this.onLoadData();
+        }
     }
 
     onSelectChange(event: number) {

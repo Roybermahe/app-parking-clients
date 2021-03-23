@@ -36,6 +36,7 @@
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
     "nativescript-geolocation": "^5.1.0",
+    "nativescript-inappbrowser": "^3.0.2",
     "nativescript-oauth2": "^3.0.3",
     "nativescript-ui-listview": "^9.1.0",
     "reflect-metadata": "~0.1.12",

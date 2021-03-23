@@ -1,5 +1,6 @@
 export class Register {
     terms?: boolean = false;
+    id?: number;
     userId?: string;
     email?: string;
     username?: string;

@@ -17,10 +17,28 @@
     </ContentView>
 </StackLayout>
 <StackLayout verticalAlignment="bottom" height="290" width="100%">
-    <GridLayout rows="auto,auto,auto" columns="*,*,*" backgroundColor="white" class="map-form">
+    <GridLayout rows="auto,auto,auto, auto" columns="*,*,*" backgroundColor="white" class="map-form">
         <label row="0" colSpan="3" col="0" class="lbl-text" text="Seleccione un vehiculo y establezca un tiempo de permanencia en la zona" textWrap="true"></label>
-        <Button row="1" col="2" [text]="textTime" class="{{parkinTime == 0 ? 'mat-icon  clk-btn':''}}" (tap)="tapSelectTime()"></Button>
-        <Button row="1" col="0" colSpan="2" [text]="btnAuto" (tap)="selectVehicle()"></Button>
-        <Button row="2" col="0" colSpan="3" text="Estacionarse en esta zona" class="btn-sub" (tap)="GuardarParking()"></Button>
+        <Label row="1" col="0" style="text-align: center"  *ngIf="parkinTime != 0" text="Costo del parking:   {{+(getTarifa(parkinTime).descuento) | currency: 'EUR': true}}" textWrap="true">
+            <FormattedString>
+                <span style="font-weight: bold" [text]="'Costo del parking:\n'"></span>
+                <span style="font-size: 16; text-align: center" text="{{+(getTarifa(parkinTime).tarifa) | currency: 'EUR': true}}"></span>
+            </FormattedString>
+        </Label>
+        <Label row="1" col="1" style="text-align: center" *ngIf="parkinTime != 0" text="Costo del parking:   {{+(getTarifa(parkinTime).descuento) | currency: 'EUR': true}}" textWrap="true">
+            <FormattedString>
+                <span style="font-weight: bold" [text]="'Descuento:\n' "></span>
+                <span style="font-size: 16; text-align: center" text="{{+(getTarifa(parkinTime).descuento) | currency: 'EUR': true}}"></span>
+            </FormattedString>
+        </Label>
+        <Label row="1" col="2" style="text-align: center" *ngIf="parkinTime != 0" text="Costo del parking:   {{+(getTarifa(parkinTime).descuento) | currency: 'EUR': true}}" textWrap="true">
+            <FormattedString>
+                <span style="font-weight: bold" [text]="'Monedero:\n' "></span>
+                <span style="font-size: 16; text-align: center" text="{{monedero | currency: 'EUR': true}}"></span>
+            </FormattedString>
+        </Label>
+        <Button row="2" col="2" [text]="textTime" class="{{parkinTime == 0 ? 'mat-icon  clk-btn':''}}" (tap)="tapSelectTime()"></Button>
+        <Button row="2" col="0" colSpan="2" [text]="btnAuto" (tap)="selectVehicle()"></Button>
+        <Button row="3" col="0" colSpan="3" text="Estacionarse en esta zona" class="btn-sub" (tap)="GuardarParking()"></Button>
     </GridLayout>
 </StackLayout>

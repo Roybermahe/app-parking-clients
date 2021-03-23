@@ -1,0 +1,10 @@
+<StackLayout  width="280" height="100%" class="dialog">
+    <GridLayout rows="auto" columns="auto, * ,auto">
+        <button row="0" col="0" class="mat-icon" text="remove" (tap)="onMinor()"></button>
+        <label  row="0" col="1" text="&#8364; {{valor}}" class="text-min"></label>
+        <button row="0" col="2" class="mat-icon" text="add" (tap)="onMore()"></button>
+    </GridLayout>
+    <button text="Realizar recarga" (tap)="onConfirm()"></button>
+</StackLayout>
+
+
